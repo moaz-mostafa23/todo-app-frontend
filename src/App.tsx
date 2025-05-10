@@ -3,6 +3,7 @@ import './App.css';
 import { Authenticator, View, Text, Heading, Button, ThemeProvider } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { getCurrentUser, signOut } from 'aws-amplify/auth';
+import TodoList from './components/TodoList';
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -52,21 +53,36 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="min-h-screen p-6 bg-gray-100">
-            <header className="mb-8 flex items-center justify-between">
-              <div>
-                <Heading level={3}>Todo App</Heading>
-                <Text>Hello, {user.username}</Text>
+          <div className="min-h-screen bg-gray-100">
+            <header className="bg-white shadow-sm">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-16">
+                  <div className="flex">
+                    <div className="flex-shrink-0 flex items-center">
+                      <Heading level={3} className="text-xl font-bold text-blue-600">Todo App</Heading>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <Text className="text-sm font-medium text-gray-700">Hello, {user.username}</Text>
+                      </div>
+                      <Button
+                        colorTheme="overlay"
+                        onClick={handleSignOut}
+                        className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      >
+                        Sign Out
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <Button variation="primary" onClick={handleSignOut}>Sign Out</Button>
             </header>
-              <main>
-                <View className="p-6 bg-white rounded-lg shadow-md">
-                  <Heading level={4} className="mb-4">Your Todo List</Heading>
-                  <Text>Todo app content will go here</Text>
-                </View>
-              </main>
-            </div>
+            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+              <TodoList />
+            </main>
+          </div>
         )}
       </div>
     </ThemeProvider>
