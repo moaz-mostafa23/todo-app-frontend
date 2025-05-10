@@ -97,7 +97,7 @@ const TodoList: React.FC = () => {
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
-      <h1 className="text-2xl md:text-3xl font-bold text-center my-6 text-gray-800">My Todo List</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-center my-6 text-gray-800">My Sellou-Do!</h1>
       
       {/* Todo Form */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">

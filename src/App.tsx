@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Authenticator, View, Text, Heading, Button, ThemeProvider } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import { getCurrentUser, signOut } from 'aws-amplify/auth';
+import { getCurrentUser, fetchUserAttributes, signOut } from 'aws-amplify/auth';
 import TodoList from './components/TodoList';
 
 function App() {
   const [user, setUser] = useState<any>(null);
+  const [userEmail, setUserEmail] = useState<string>("");
 
   useEffect(() => {
     checkUser();
@@ -16,6 +17,11 @@ function App() {
     try {
       const currentUser = await getCurrentUser();
       setUser(currentUser);
+
+      const attributes = await fetchUserAttributes();
+      if (attributes.email) {
+        setUserEmail(attributes.email);
+      }
     } catch (err) {
       setUser(null);
       console.log('No authenticated user:', err);
@@ -45,7 +51,7 @@ function App() {
                   return (
                     <View className="p-6 bg-white rounded-lg shadow-md">
                       <Heading level={3} className="mb-4 text-center">Sign in successful</Heading>
-                      <Text>Loading your Todo application...</Text>
+                      <Text>Loading Sellou-Do</Text>
                     </View>
                   );
                 }}
@@ -59,13 +65,13 @@ function App() {
                 <div className="flex justify-between h-16">
                   <div className="flex">
                     <div className="flex-shrink-0 flex items-center">
-                      <Heading level={3} className="text-xl font-bold text-blue-600">Todo App</Heading>
+                        <Heading level={3} className="text-xl font-bold text-blue-600">Sellou-Do</Heading>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center space-x-2">
-                        <Text className="text-sm font-medium text-gray-700">Hello, {user.username}</Text>
+                          <Text className="text-sm font-medium text-gray-700">Hello, {userEmail || user.username}</Text>
                       </div>
                       <Button
                         colorTheme="overlay"

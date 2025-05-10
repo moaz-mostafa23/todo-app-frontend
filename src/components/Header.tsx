@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ username }) => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="text-xl font-bold text-blue-600">Todo App</h1>
+              <h1 className="text-xl font-bold text-blue-600">Sellou-Do</h1>
             </div>
           </div>
           <div className="flex items-center">
