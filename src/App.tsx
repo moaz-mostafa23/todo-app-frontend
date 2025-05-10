@@ -4,6 +4,8 @@ import { Authenticator, View, Text, Heading, Button, ThemeProvider } from '@aws-
 import '@aws-amplify/ui-react/styles.css';
 import { getCurrentUser, fetchUserAttributes, signOut } from 'aws-amplify/auth';
 import TodoList from './components/TodoList';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -90,6 +92,7 @@ function App() {
             </main>
           </div>
         )}
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       </div>
     </ThemeProvider>
   );
