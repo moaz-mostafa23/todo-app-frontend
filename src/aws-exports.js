@@ -10,8 +10,8 @@ const awsmobile = {
     "oauth": {
         "domain": "your-domain.auth.us-east-1.amazoncognito.com",
         "scope": ["phone", "email", "openid", "profile"],
-        "redirectSignIn": "http://localhost:3000/",
-        "redirectSignOut": "http://localhost:3000/",
+        "redirectSignIn": "http://localhost:3000/,https://d3ov4tjsft8ivj.cloudfront.net/",
+        "redirectSignOut": "http://localhost:3000/,https://d3ov4tjsft8ivj.cloudfront.net/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
