@@ -73,7 +73,7 @@ function App() {
                   <div className="flex items-center">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center space-x-2">
-                          <Text className="text-sm font-medium text-gray-700">Hello, {userEmail || user.username}</Text>
+                          <Text className="text-sm font-medium text-gray-700">Hello, {userEmail}</Text>
                       </div>
                       <Button
                         colorTheme="overlay"
