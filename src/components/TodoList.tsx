@@ -92,7 +92,7 @@ const TodoList: React.FC = () => {
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
-      <h1 className="text-2xl md:text-3xl font-bold text-center my-6 text-gray-800">My Sellou-Do!</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-center my-6 text-gray-800">My My-Do!</h1>
       
       <TodoFormSection
         editingTodo={editingTodo}

@@ -53,7 +53,7 @@ function App() {
                   return (
                     <View className="p-6 bg-white rounded-lg shadow-md">
                       <Heading level={3} className="mb-4 text-center">Sign in successful</Heading>
-                      <Text>Loading Sellou-Do</Text>
+                      <Text>Loading My-Do</Text>
                     </View>
                   );
                 }}
@@ -67,7 +67,7 @@ function App() {
                 <div className="flex justify-between h-16">
                   <div className="flex">
                     <div className="flex-shrink-0 flex items-center">
-                        <Heading level={3} className="text-xl font-bold text-blue-600">Sellou-Do</Heading>
+                        <Heading level={3} className="text-xl font-bold text-blue-600">My-Do</Heading>
                     </div>
                   </div>
                   <div className="flex items-center">

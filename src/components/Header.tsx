@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ username }) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                Sellou-Do
+                My-Do
               </motion.h1>
             </div>
           </motion.div>
